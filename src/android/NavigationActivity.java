@@ -1,4 +1,5 @@
 package xiaolong.cordova.gaode;
+import android.content.res.Resources;
 
 import android.app.Activity;
 import android.content.Intent;
