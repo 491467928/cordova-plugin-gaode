@@ -1,0 +1,21 @@
+{
+  "name": "cordova-plugin-gaode",
+  "version": "0.0.1",
+  "description": "高德地图SDK的cordova plugin",
+  "cordova": {
+    "id": "cordova-plugin-gaode",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "gaode",
+    "location",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "wxl",
+  "license": "MIT"
+}
