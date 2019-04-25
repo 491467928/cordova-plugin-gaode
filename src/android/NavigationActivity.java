@@ -25,7 +25,6 @@ import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.NaviInfo;
 import com.amap.api.navi.model.NaviLatLng;
 import com.autonavi.tbt.TrafficFacilityInfo;
-import com.flybus.around.R;
 
 import java.util.ArrayList;
 
@@ -35,6 +34,8 @@ public class NavigationActivity extends Activity implements AMapNaviListener, AM
     private NaviLatLng mNaviStart;
     private NaviLatLng mNaviEnd;
     private int navType = -1;
+    private String package_name;
+    private Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +49,8 @@ public class NavigationActivity extends Activity implements AMapNaviListener, AM
         mAMapNavi.addAMapNaviListener(this);
         mAMapNavi.setUseInnerVoice(true);
 
-        setContentView(R.layout.activity_navigation);
-        mAMapNaviView = (AMapNaviView) findViewById(R.id.navi_view);
+        setContentView(getResourceId("id/activity_navigation"));
+        mAMapNaviView = (AMapNaviView) findViewById(getResourceId("navi_view"));
         mAMapNaviView.setAMapNaviViewListener(this);
         mAMapNaviView.onCreate(savedInstanceState);
 
@@ -57,8 +58,14 @@ public class NavigationActivity extends Activity implements AMapNaviListener, AM
         AMapNaviViewOptions options = new AMapNaviViewOptions();
         options.setScreenAlwaysBright(false);
         mAMapNaviView.setViewOptions(options);
-
     }
+    private int getResourceId (String typeAndName)
+    {
+        if(package_name == null) package_name = getApplication().getPackageName();
+        if(resources == null) resources = getApplication().getResources();
+        return resources.getIdentifier(typeAndName, null, package_name);
+    }
+
     @Override
     public void onInitNaviSuccess() {
         switch (navType){
