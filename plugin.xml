@@ -86,6 +86,7 @@
         <source-file src="src/android/GaodePlugin.java" target-dir="src/xiaolong/cordova/gaode"/>
         <source-file src="src/android/NavigationActivity.java" target-dir="src/xiaolong/cordova/gaode"/>
         <framework src="com.amap.api:location:latest.integration" />
+        <framework src="com.amap.api:navi-3dmap:latest.integration"/>
         <framework src="com.squareup.okhttp3:okhttp-urlconnection:3.10.0"/>
     </platform>
 </plugin>
