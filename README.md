@@ -1,7 +1,5 @@
 #安装
-ionic cordova plugin add D:\code\TourBus\SourceCode\Dev\custom-cordova-plugins\cordova-plugin-gaode --variable ios_key=XXXXX --variable android_key=XXXXXXX
-
-ionic cordova plugin add /users/liumin/code/custom-cordova-plugins/cordova-plugin-gaode --variable ios_key=7d0160bb7aec3907bdee8b8d17ab4826 --variable android_key=c1c793ed7568769a40e6dbd026d9e454
+ionic cordova plugin add custom-cordova-plugins\cordova-plugin-gaode --variable ios_key=XXXXX --variable android_key=XXXXXXX
 
 请把XXXXXX替换成对应的高德应用的key
 

@@ -78,7 +78,11 @@ public class GaodePlugin extends CordovaPlugin {
             return true;
         }
         if (action.equals("onceLocation")) {
-            onceLocation();
+            if (hasPermisssion()) {
+                this.onceLocation();
+            } else {
+                PermissionHelper.requestPermissions(this, 0, permissions);
+            }
             return true;
         }
         if (action.equals("navigation")) {
