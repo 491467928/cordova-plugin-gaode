@@ -15,10 +15,6 @@
         [AMapServices sharedServices].apiKey =key;
         self.locationManager = [[AMapLocationManager alloc] init];
         [self.locationManager setDelegate:self];
-        [self.locationManager setPausesLocationUpdatesAutomatically:NO];
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
-            self.locationManager.allowsBackgroundLocationUpdates = YES;
-        }
         NSLog(@"cordova-plugin-gaode has been initialized. Key: %@.", key);
     }
 }
@@ -30,6 +26,10 @@
     interval = [[command.arguments objectAtIndex:1] intValue];
     loginName=[command.arguments objectAtIndex:2];
     if (serverUrl != nil && [serverUrl length] > 0) {
+        [self.locationManager setPausesLocationUpdatesAutomatically:NO];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+            self.locationManager.allowsBackgroundLocationUpdates = YES;
+        }
         [self.locationManager startUpdatingLocation];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     } else {

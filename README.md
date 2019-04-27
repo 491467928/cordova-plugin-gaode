@@ -1,5 +1,5 @@
 #安装
-ionic cordova plugin add custom-cordova-plugins\cordova-plugin-gaode --variable ios_key=XXXXX --variable android_key=XXXXXXX
+cordova plugin add custom-cordova-plugins\cordova-plugin-gaode --variable ios_key=XXXXX --variable android_key=XXXXXXX
 
 请把XXXXXX替换成对应的高德应用的key
 
