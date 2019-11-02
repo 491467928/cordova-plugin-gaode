@@ -1,6 +1,0 @@
-framework module AMapNaviKit {
-  umbrella header "AMapNaviKit.h"
-
-  export *
-  module * { export * }
-}
